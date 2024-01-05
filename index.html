@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+ <link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/materialize.min.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/jquery-ui.min.css">
+<link rel="stylesheet" href="css/jquery-ui.structure.min.css">
+<link rel="stylesheet" href="css/jquery-ui.theme.min.css">
+</head>
+<body>
+
+    
+  <div class="navbar-fixed">
+    <nav class="z-depth-2 nav-bar" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" class="brand-logo truncate">
+          Analysis of Polarization in Political Tweets
+        </a>
+      </div>
+    </nav>
+  </div>
+
+
+<div class="container">
+
+  <div class="card" id="country-filter-card">
+    <div class="card-content">
+
+     <h6 class="title">select a score type</h6>
+
+    <select id="links-filter" class="form-control">
+      <option value="all">all</option>
+      <option selected value="toxicity">toxicity</option>
+      <option value="severe_toxicity">severe_toxicity</option>
+      <option value="obscene">obscene</option>
+      <option value="threat">threat</option>
+      <option value="insult">insult</option>
+      <option value="identity_attack">identity_attack</option>
+    </select>
+
+    <div id="slider-div">
+      <label>Date: <span id="state-time-label-1"></span> - <span id="state-time-label-2"></span></label>
+      <div id="date-slider"></div>
+    </div>
+
+    <br>
+
+    <button type="button" class="btn btn-primary" id="filters-info">Show Info</button>
+
+      <div id="filters-info-content">
+      <ul class="list-group">
+        <li class="list-group-item">choose which type of toxicity to view </li>
+        <li class="list-group-item"> select the desired date range to see how the state color changes</li>
+      </ul>
+      </div>
+
+    </div>
+
+    <!--<div class="d-flex justify-content-center">
+      <div class="spinner-border text-info" id="lineChartCardLoader" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>-->
+    </div>
+
+  <div class="card" id="country-map-card">
+    <div class="card-content">
+      <h6 class="title">United States Map</h6>
+      <button type="button" class="btn btn-primary" id="map-info">Show Info</button>
+
+      <div id="map-info-content">
+
+         <ul class="list-group">
+            <li class="list-group-item"> Hover onto each state to check out their info </li>
+            <li class="list-group-item"> Click on each state to see their detailed info displayed below</li>
+            <li class="list-group-item"> Click anywhere on the whites to close the detailed info display </li>
+        </ul>
+
+        </div>
+    </div>
+
+    <!--<div class="d-flex justify-content-center">
+      <div class="spinner-border text-info" id="lineChartCardLoader" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>-->
+    </div>
+
+    <div class="card" id="in-state-stats-card" style="display:none">
+      <div class="card-content">
+        <h6 class="title">Level of hashtags scatterplot</h6>
+        <select id="level-filter" class="form-control">
+          <option value="country-level">country-level</option>
+          <option selected value="state-level">state-level</option>
+        </select>
+        <button type="button" class="btn btn-primary" id="hashtag-info">Show Info</button>
+
+      <div id="hashtag-info-content">
+
+         <ul class="list-group">
+            <li class="list-group-item"> Select state-level to view hashtag info of clicked state, select country-level to view hashtag info of the entire country</li>
+            <li class="list-group-item"> Each point represents a hashtag, hover onto each point to see their info </li>
+        </ul>
+
+        </div>
+        <h6 class="title" id="in-state-title"></h6>
+      </div>
+    </div>
+ 
+    
+
+
+</div>
+
+<script src="js/jquery-3.5.1.min.js"></script>
+<script src="js/d3.v5.min.js"></script>
+<!--<script src="https://d3js.org/d3.v5.min.js"></script>-->
+<script src="js/jquery-ui.min.js"></script>
+<script src="js/lodash.min.js"></script>
+<script src="js/d3-tip.min.js"></script>
+<script src="js/topojson.min.js"></script>
+<script src="js/d3-legend.min.js"></script>
+<script src="https://d3js.org/d3-voronoi.v1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-color@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-interpolate@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-scale-chromatic@3"></script>
+<!--<script type="text/javascript"> src="js/d3-legend.min.js"></script>-->
+<script src="js/stateGraph.js"></script>
+<script src="js/stateColoringGraph.js"></script>
+<script src="js/load_viz.js"></script>
+<script src="js/main.js"></script>
+
+</body>
